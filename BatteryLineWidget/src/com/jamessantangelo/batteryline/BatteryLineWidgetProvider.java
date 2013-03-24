@@ -17,8 +17,8 @@ public class BatteryLineWidgetProvider extends AppWidgetProvider
 {
 	private static final String TAG = "BatteryLine";
 	private static final String ACTION_LINE_CLICKED = "com.jamessantangelo.batteryline.LINE_CLICKED";
-	private BroadcastReceiver registeredReceiver = null;
-	private boolean textShowing = true;
+	private static BroadcastReceiver registeredReceiver = null;
+	private static boolean textShowing = true;
 
 	public void onUpdate(Context context, AppWidgetManager widgetManager,
 		int[] widgetIds)
@@ -63,17 +63,17 @@ public class BatteryLineWidgetProvider extends AppWidgetProvider
 		}
 		else if (intent.getAction().equals(ACTION_LINE_CLICKED))
 		{
-			Log.d(TAG, "Layout clicked...");
-
 			RemoteViews views = new RemoteViews(context.getPackageName(), 
 				R.layout.linelayout);
 			if (textShowing)
 			{
+				Log.d(TAG, "Hiding text...");
 				views.setViewVisibility(R.id.debugtext, View.INVISIBLE);
 				textShowing = false;
 			}
 			else
 			{
+				Log.d(TAG, "Un-hiding text...");
 				views.setViewVisibility(R.id.debugtext, View.VISIBLE);
 				textShowing = true;
 			}
