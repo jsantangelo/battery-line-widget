@@ -1,0 +1,10 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="com.jamessantangelo.batteryline.BatteryLineWidgetProvider"
+    android:minWidth="340dp"
+    android:minHeight="20dp"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/linelayout"
+    android:resizeMode="horizontal|vertical" >
+</appwidget-provider>
+
+<!-- android:previewImage="@drawable/preview" -->
